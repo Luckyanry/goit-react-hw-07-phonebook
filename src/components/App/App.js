@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
+import { getContacts } from "../../redux/contacts/contactOperations";
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import Filter from "../Filter/Filter";
@@ -12,6 +13,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.props.onGetContacts();
     this.setState((state) => ({
       animation: !state.animation,
     }));
@@ -58,4 +60,8 @@ const mapStateToProps = (state) => ({
   contacts: state.contacts.items,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+  onGetContacts: getContacts,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

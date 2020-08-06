@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
-import { addContact } from "../../redux/actions/contactAction";
+import { addContact } from "../../redux/contacts/contactOperations";
 import "./ContactForm.css";
 
 class ContactForm extends Component {
@@ -117,7 +117,7 @@ ContactForm.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      id: PropTypes.string,
+      id: PropTypes.number,
       namber: PropTypes.string,
     })
   ).isRequired,

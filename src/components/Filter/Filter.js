@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { handleFilter } from "../../redux/actions/contactAction";
+import { handleFilter } from "../../redux/contacts/contactAction";
 import "./Filter.css";
 
 const Filter = ({ filter, handleFilter }) => {

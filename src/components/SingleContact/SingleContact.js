@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { deleteContact } from "../../redux/actions/contactAction";
+import { deleteContact } from "../../redux/contacts/contactOperations";
 import "./SingleContact.css";
 
 const SingleContact = ({ name, number, deleteContact }) => {
@@ -32,7 +32,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(SingleContact);
 
 SingleContact.propTypes = {
   name: PropTypes.string,
-  id: PropTypes.string.isRequired,
   number: PropTypes.string,
   deleteContact: PropTypes.func.isRequired,
 };

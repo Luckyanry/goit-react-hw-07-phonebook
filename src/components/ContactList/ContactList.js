@@ -36,7 +36,7 @@ ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      id: PropTypes.string,
+      id: PropTypes.number,
       namber: PropTypes.string,
     })
   ).isRequired,
