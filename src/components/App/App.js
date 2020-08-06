@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import { getContacts } from "../../redux/contacts/contactOperations";
+import { itemsSelector } from "../../redux/contacts/contactsSelectors";
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
 import Filter from "../Filter/Filter";
@@ -57,7 +58,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  contacts: state.contacts.items,
+  contacts: itemsSelector(state),
 });
 
 const mapDispatchToProps = {

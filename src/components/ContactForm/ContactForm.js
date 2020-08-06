@@ -3,6 +3,10 @@ import { connect } from "react-redux";
 import { CSSTransition } from "react-transition-group";
 import PropTypes from "prop-types";
 import { addContact } from "../../redux/contacts/contactOperations";
+import {
+  filterSelector,
+  itemsSelector,
+} from "../../redux/contacts/contactsSelectors";
 import "./ContactForm.css";
 
 class ContactForm extends Component {
@@ -103,8 +107,8 @@ class ContactForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  contacts: state.contacts.items,
-  filter: state.contacts.filter,
+  contacts: itemsSelector(state),
+  filter: filterSelector(state),
 });
 
 const mapDispatchToProps = {
