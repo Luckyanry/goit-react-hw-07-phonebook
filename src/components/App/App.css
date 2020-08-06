@@ -1,0 +1,66 @@
+.Container {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.AppTitle {
+  color: #4242ce;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ContactTitle {
+  color: #4242ce;
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.Title-slideIn {
+  color: aqua;
+  font-weight: 700;
+}
+
+.Title-slideIn-appear-active {
+  animation: task 500ms ease-in alternate-reverse;
+}
+
+.FilterAnimation-enter {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.FilterAnimation-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 250ms linear;
+}
+
+.FilterAnimation-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.FilterAnimation-exit-active {
+  opacity: 0;
+  transform: scale(0.1);
+  transition: all 250ms linear;
+}
+
+@keyframes task {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 0.7;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
